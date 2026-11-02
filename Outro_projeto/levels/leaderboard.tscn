@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6sw4xwq6ug40"]
+
+[ext_resource type="FontFile" uid="uid://cgak1f7rmg8lo" path="res://Assets/Fonts/Kenney Pixel Square.ttf" id="1_0pxou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clju5"]
+
+[node name="Control_ranking" type="HBoxContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.5
+offset_top = -23.0
+offset_right = 82.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+
+[node name="playerposition" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0pxou")
+theme_override_font_sizes/font_size = 10
+text = "#00"
+
+[node name="playername" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0pxou")
+theme_override_font_sizes/font_size = 10
+text = "TESTNAME"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 55
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clju5")
+
+[node name="playerscore" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0pxou")
+theme_override_font_sizes/font_size = 10
+text = "1234"

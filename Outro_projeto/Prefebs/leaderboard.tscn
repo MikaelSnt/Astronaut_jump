@@ -1,0 +1,204 @@
+[gd_scene load_steps=25 format=3 uid="uid://da0vm7usqatig"]
+
+[ext_resource type="Texture2D" uid="uid://bi465r4meo7go" path="res://Outro_projeto/imagens/Logo_nova.png" id="1_2wf2m"]
+[ext_resource type="Shader" uid="uid://c6vufy3pgrwdt" path="res://Shaders/moviment_clouds.gdshader" id="1_fgtfr"]
+[ext_resource type="Script" uid="uid://cd7fhfxy8qa12" path="res://Outro_projeto/Scripts/leaderboard.gd" id="1_oguue"]
+[ext_resource type="Texture2D" uid="uid://66sokrgal4q4" path="res://Outro_projeto/imagens/Fundo jogo.png" id="2_oetbj"]
+[ext_resource type="Texture2D" uid="uid://bedbyqxi2p1s4" path="res://Outro_projeto/imagens/Fundo_highscore-removebg-preview.png" id="3_oetbj"]
+[ext_resource type="Texture2D" uid="uid://npulwm3w1pb6" path="res://Outro_projeto/imagens/WhatsApp_Image_2025-06-28_at_4.00.30_PM-removebg-preview.png" id="4_dntk7"]
+[ext_resource type="Texture2D" uid="uid://ckh672lp3j1bb" path="res://Outro_projeto/imagens/Loja.png" id="5_fdios"]
+[ext_resource type="Texture2D" uid="uid://bd3uo8u4lhhdl" path="res://Outro_projeto/imagens/menu_icon.png" id="6_2wf2m"]
+[ext_resource type="FontFile" uid="uid://b5cenjnnpxvh3" path="res://Outro_projeto/Assets/Fonts/PressStart2P-Regular.ttf" id="6_ydslg"]
+[ext_resource type="AudioStream" uid="uid://d318dajd7nbif" path="res://Outro_projeto/Audios/194059__potentjello__buttons-and-knobs-2.wav" id="10_5r41v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dntk7"]
+shader = ExtResource("1_fgtfr")
+shader_parameter/move_speed = 0.5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dntk7"]
+texture = ExtResource("3_oetbj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdios"]
+texture = ExtResource("4_dntk7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5r41v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1nbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1enbf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acfnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sc0r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxxld"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0eb3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4tb3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sy5de"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r41v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okthq"]
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.174
+anchor_top = 0.297
+anchor_right = 0.189
+anchor_bottom = 0.312
+offset_left = 4.68
+offset_top = -0.0399933
+offset_right = 292.68
+offset_bottom = 255.96
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.41084, 0.45)
+theme_override_constants/h_separation = 60
+columns = 3
+script = ExtResource("1_oguue")
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -4
+material = SubResource("ShaderMaterial_dntk7")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.280556
+anchor_top = -0.315625
+anchor_right = 1.23611
+anchor_bottom = 1.19687
+offset_left = 46.5
+offset_top = 82.0
+offset_right = -46.5
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03455, 1.12772)
+texture = ExtResource("2_oetbj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="BG_two" type="PanelContainer" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(0, 47.095)
+layout_mode = 0
+offset_left = 39.0
+offset_top = 57.0
+offset_right = 153.0
+offset_bottom = 104.095
+scale = Vector2(0.909608, 0.757665)
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dntk7")
+
+[node name="BG_blue" type="PanelContainer" parent="."]
+z_index = -2
+layout_mode = 0
+offset_left = 5.0
+offset_top = 26.0
+offset_right = 45.0
+offset_bottom = 66.0
+scale = Vector2(4.364, 5.972)
+pivot_offset = Vector2(0, -3.42)
+theme_override_styles/panel = SubResource("StyleBoxTexture_fdios")
+
+[node name="loja" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 798.0
+offset_bottom = 919.0
+scale = Vector2(0.06, 0.06)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5r41v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g1nbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1enbf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_acfnu")
+icon = ExtResource("5_fdios")
+
+[node name="menu_icon" type="Button" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 13.0
+offset_right = 698.0
+offset_bottom = 733.0
+scale = Vector2(0.06, 0.06)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5sc0r")
+icon = ExtResource("6_2wf2m")
+
+[node name="Marker2Df" type="Marker2D" parent="."]
+position = Vector2(47, 138)
+scale = Vector2(0.8, 0.8)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 67.0
+offset_right = 164.0
+offset_bottom = 90.0
+scale = Vector2(0.679043, 0.724053)
+theme_override_fonts/font = ExtResource("6_ydslg")
+text = "Ranking"
+
+[node name="icon_astro" type="Button" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 4.0
+offset_right = 232.0
+offset_bottom = 216.0
+scale = Vector2(0.291735, 0.240361)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pxxld")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0eb3t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i4tb3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sy5de")
+icon = ExtResource("1_2wf2m")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="icon_astro"]
+
+[node name="Recome" type="Label" parent="."]
+modulate = Color(0.73859, 0.73859, 0.73859, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 287.0
+offset_right = 272.0
+offset_bottom = 310.0
+scale = Vector2(0.538589, 1.13592)
+theme_override_fonts/font = ExtResource("6_ydslg")
+text = "Recomeçar"
+horizontal_alignment = 1
+
+[node name="reset_game" type="TouchScreenButton" parent="Recome"]
+position = Vector2(122.542, 7.92308)
+scale = Vector2(7.75453, 0.814843)
+shape = SubResource("RectangleShape2D_5r41v")
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_5r41v")
+volume_db = 0.275
+
+[node name="player_position" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 233.0
+offset_right = 71.0
+offset_bottom = 256.0
+scale = Vector2(0.333402, 0.349548)
+theme_override_fonts/font = ExtResource("6_ydslg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_okthq")
+
+[connection signal="pressed" from="loja" to="GridContainer" method="_on_loja_pressed"]
+[connection signal="pressed" from="menu_icon" to="GridContainer" method="_on_menu_icon_pressed"]
+[connection signal="pressed" from="icon_astro" to="GridContainer" method="_on_icon_astro_pressed"]
+[connection signal="pressed" from="Recome/reset_game" to="GridContainer" method="_on_reset_game_pressed"]

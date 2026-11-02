@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctsp7jt8opkpr"]
+
+[ext_resource type="Script" uid="uid://cajmx46hytoy7" path="res://Outro_projeto/Scripts/attack.gd" id="1_knvux"]
+[ext_resource type="Texture2D" uid="uid://dcaiicsdciu34" path="res://Outro_projeto/Assets/Effects_explosition/Yellow Effect Bullet Impact Explosion 32x32.png" id="2_knvux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdm1r"]
+atlas = ExtResource("2_knvux")
+region = Rect2(352, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fijn8"]
+atlas = ExtResource("2_knvux")
+region = Rect2(384, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_627s3"]
+atlas = ExtResource("2_knvux")
+region = Rect2(416, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dxtx"]
+atlas = ExtResource("2_knvux")
+region = Rect2(448, 320, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knvux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdm1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fijn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_627s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dxtx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdm1r"]
+radius = 3.58722
+height = 7.17445
+
+[node name="attack" type="StaticBody2D" groups=["inimigo"]]
+rotation = 0.0210871
+scale = Vector2(3.305, 3.087)
+script = ExtResource("1_knvux")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["inimigo"]]
+rotation = 1.55079
+scale = Vector2(0.13, 0.13)
+sprite_frames = SubResource("SpriteFrames_knvux")
+frame = 3
+frame_progress = 1.0
+
+[node name="hit_box" type="Area2D" parent="." groups=["inimigo"]]
+
+[node name="collision" type="CollisionShape2D" parent="hit_box" groups=["inimigo"]]
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(0.476353, 0.61538)
+shape = SubResource("CapsuleShape2D_mdm1r")
+
+[connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]

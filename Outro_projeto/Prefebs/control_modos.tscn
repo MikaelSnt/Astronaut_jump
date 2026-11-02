@@ -1,0 +1,172 @@
+[gd_scene load_steps=25 format=3 uid="uid://sn1dwtj7t4sd"]
+
+[ext_resource type="Script" uid="uid://cslcgfu7w7alj" path="res://Outro_projeto/Scripts/control_modos.gd" id="1_po66o"]
+[ext_resource type="Texture2D" uid="uid://66sokrgal4q4" path="res://Outro_projeto/imagens/Fundo jogo.png" id="2_2ia5n"]
+[ext_resource type="Shader" uid="uid://c6vufy3pgrwdt" path="res://Shaders/moviment_clouds.gdshader" id="2_307ny"]
+[ext_resource type="Texture2D" uid="uid://dmd3mfcv4shsw" path="res://Outro_projeto/imagens/buttons_prata.png" id="3_307ny"]
+[ext_resource type="Texture2D" uid="uid://c3syafswubxpy" path="res://Outro_projeto/imagens/Gira_cell.png" id="4_q4xxk"]
+[ext_resource type="FontFile" uid="uid://b5cenjnnpxvh3" path="res://Outro_projeto/Assets/Fonts/PressStart2P-Regular.ttf" id="7_q0b2a"]
+[ext_resource type="Texture2D" uid="uid://del1ntj2svb2" path="res://Outro_projeto/imagens/Ranking.png" id="8_ac6wp"]
+[ext_resource type="Texture2D" uid="uid://ckh672lp3j1bb" path="res://Outro_projeto/imagens/Loja.png" id="9_2ia5n"]
+[ext_resource type="AudioStream" uid="uid://d318dajd7nbif" path="res://Outro_projeto/Audios/194059__potentjello__buttons-and-knobs-2.wav" id="9_q4xxk"]
+[ext_resource type="Texture2D" uid="uid://bi465r4meo7go" path="res://Outro_projeto/imagens/Logo_nova.png" id="10_ongs2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jnrd8"]
+shader = ExtResource("2_307ny")
+shader_parameter/move_speed = 0.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufc6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0b2a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ac6wp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lrhs8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cle2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsr4n"]
+font = ExtResource("7_q0b2a")
+font_size = 19
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ia5n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_307ny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnrd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khqt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ia5n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jihit"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30k1m"]
+
+[node name="Control_modos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_po66o")
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_jnrd8")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.280556
+anchor_top = -0.315625
+anchor_right = 1.23611
+anchor_bottom = 1.19687
+offset_left = 46.5
+offset_top = 82.0
+offset_right = -46.5
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03455, 1.12772)
+texture = ExtResource("2_2ia5n")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Controles" type="Button" parent="."]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 125.0
+offset_right = 238.0
+offset_bottom = 186.0
+scale = Vector2(0.615, 0.708)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ufc6e")
+icon = ExtResource("3_307ny")
+icon_alignment = 1
+
+[node name="Sem Controles" type="Button" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 233.0
+offset_right = 552.0
+offset_bottom = 733.0
+scale = Vector2(0.154576, 0.138001)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q0b2a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ac6wp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lrhs8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2cle2")
+icon = ExtResource("4_q4xxk")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Sem Controles"]
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_q4xxk")
+volume_db = 0.275
+
+[node name="Escolha" type="Label" parent="."]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 88.0
+offset_right = 562.0
+offset_bottom = 166.0
+scale = Vector2(0.39, 0.39)
+theme_override_fonts/font = ExtResource("7_q0b2a")
+text = "Escolha o modo de jogo  
+para começar
+"
+label_settings = SubResource("LabelSettings_rsr4n")
+horizontal_alignment = 1
+
+[node name="ranking" type="Button" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 17.0
+offset_right = 236.0
+offset_bottom = 103.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2ia5n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_307ny")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jnrd8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_khqt5")
+icon = ExtResource("8_ac6wp")
+
+[node name="leaderboard" type="TouchScreenButton" parent="ranking"]
+position = Vector2(57.0667, 34.1486)
+scale = Vector2(4.78423, 2.93105)
+shape = SubResource("RectangleShape2D_2ia5n")
+
+[node name="loja" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 798.0
+offset_bottom = 924.0
+scale = Vector2(0.06, 0.06)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2ia5n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_307ny")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jnrd8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jihit")
+icon = ExtResource("9_2ia5n")
+
+[node name="icon_astro" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = -1.0
+offset_right = 223.0
+offset_bottom = 211.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2ia5n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_307ny")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jnrd8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_30k1m")
+icon = ExtResource("10_ongs2")
+
+[connection signal="pressed" from="Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="Sem Controles" to="." method="_on_sem_controles_pressed"]
+[connection signal="pressed" from="ranking/leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="loja" to="." method="_on_loja_pressed"]
+[connection signal="pressed" from="icon_astro" to="." method="_on_icon_astro_pressed"]

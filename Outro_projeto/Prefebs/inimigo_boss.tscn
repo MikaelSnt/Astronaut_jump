@@ -1,0 +1,438 @@
+[gd_scene load_steps=30 format=3 uid="uid://cmacys0p78iy3"]
+
+[ext_resource type="Script" uid="uid://binnjrux8qg5c" path="res://Outro_projeto/Scripts/boss_one.gd" id="1_lir33"]
+[ext_resource type="Texture2D" uid="uid://br2c254wknab2" path="res://Outro_projeto/imagens/OVNI.png" id="2_8hmuu"]
+[ext_resource type="Texture2D" uid="uid://ghedsj7fpwcx" path="res://Outro_projeto/Assets/Effects_explosition/Green Effect Bullet Impact Explosion 32x32.png" id="3_8hmuu"]
+[ext_resource type="Texture2D" uid="uid://cvxf6na7t2eyx" path="res://Outro_projeto/imagens/Barra de vida.png" id="3_lir33"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1cqn"]
+atlas = ExtResource("3_8hmuu")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpbrq"]
+atlas = ExtResource("3_8hmuu")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmbg6"]
+atlas = ExtResource("3_8hmuu")
+region = Rect2(256, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2caf6"]
+atlas = ExtResource("3_8hmuu")
+region = Rect2(288, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wrlg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1cqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpbrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmbg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2caf6")
+}],
+"loop": true,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpbrq"]
+radius = 66.0
+height = 330.0
+
+[sub_resource type="Animation" id="Animation_avnta"]
+resource_name = "Explosion"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_2wrlg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"explosion"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.1, 1.4, 1.93333, 2.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.5, 2.06667, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.745, 2.745), Vector2(4.485, 4.485), Vector2(12.727, 5.897), Vector2(6.025, 6.025), Vector2(11.145, 7.495)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ovni:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureProgressBar:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_anvpt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ovni:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_8hmuu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ovni:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_2wrlg")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"explosion"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.745, 2.745)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Ovni:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureProgressBar:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lir33"]
+resource_name = "attack_player"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureProgressBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dmyth"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ovni:texture")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_8hmuu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ovni:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.533333, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, 61), Vector2(-33, 76), Vector2(73, 69), Vector2(-33, 76), Vector2(-2, 61)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureProgressBar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c5dr0"]
+_data = {
+&"Explosion": SubResource("Animation_avnta"),
+&"RESET": SubResource("Animation_anvpt"),
+&"attack_player": SubResource("Animation_lir33"),
+&"idle": SubResource("Animation_dmyth")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_do0x7"]
+animation = &"Explosion"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lir33"]
+animation = &"attack_player"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yy5ob"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3rlir"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8hmuu"]
+advance_mode = 2
+advance_condition = &"attack_player"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t0sy4"]
+advance_mode = 2
+advance_condition = &"explodir"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c1cqn"]
+advance_mode = 2
+advance_condition = &"explodir"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_16lqs"]
+states/Explosion/node = SubResource("AnimationNodeAnimation_do0x7")
+states/Explosion/position = Vector2(382.667, 38)
+states/attack_player/node = SubResource("AnimationNodeAnimation_lir33")
+states/attack_player/position = Vector2(456, 108.667)
+states/idle/node = SubResource("AnimationNodeAnimation_yy5ob")
+states/idle/position = Vector2(330.667, 100.222)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3rlir"), "idle", "attack_player", SubResource("AnimationNodeStateMachineTransition_8hmuu"), "idle", "Explosion", SubResource("AnimationNodeStateMachineTransition_t0sy4"), "attack_player", "Explosion", SubResource("AnimationNodeStateMachineTransition_c1cqn")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82y6b"]
+size = Vector2(12, 321.5)
+
+[sub_resource type="Gradient" id="Gradient_8hmuu"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.41942, 5.77569e-07, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c1cqn"]
+gradient = SubResource("Gradient_8hmuu")
+
+[sub_resource type="Gradient" id="Gradient_qpbrq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bmbg6"]
+gradient = SubResource("Gradient_qpbrq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lir33"]
+size = Vector2(328.205, 121.739)
+
+[node name="inimigo_boss" type="Node2D" groups=["inimigo_boss"]]
+
+[node name="Boss_one" type="StaticBody2D" parent="." groups=["inimigo_boss"]]
+scale = Vector2(0.195, 0.23)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_lir33")
+speed = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss_one"]
+position = Vector2(7.12821, -91.4348)
+scale = Vector2(2.745, 2.745)
+sprite_frames = SubResource("SpriteFrames_2wrlg")
+animation = &"explosion"
+
+[node name="Ovni" type="Sprite2D" parent="Boss_one"]
+texture = ExtResource("2_8hmuu")
+
+[node name="hurt_box" type="Area2D" parent="Boss_one/Ovni"]
+position = Vector2(2, -61)
+
+[node name="collision_hurt" type="CollisionShape2D" parent="Boss_one/Ovni/hurt_box"]
+position = Vector2(-1, -28)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qpbrq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss_one"]
+libraries = {
+&"": SubResource("AnimationLibrary_c5dr0")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Boss_one"]
+tree_root = SubResource("AnimationNodeStateMachine_16lqs")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack_player = false
+parameters/conditions/explodir = false
+
+[node name="check_player_area" type="Area2D" parent="Boss_one"]
+position = Vector2(-860, -161.017)
+scale = Vector2(10, 8.47458)
+
+[node name="check_player" type="CollisionShape2D" parent="Boss_one/check_player_area"]
+position = Vector2(86, 161)
+shape = SubResource("RectangleShape2D_82y6b")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Boss_one"]
+visible = false
+offset_left = -430.769
+offset_top = -73.913
+offset_right = 149.231
+offset_bottom = 506.087
+scale = Vector2(1.54349, -0.531501)
+size_flags_vertical = 8
+texture_under = ExtResource("3_lir33")
+
+[node name="Barra_de_vida" type="TextureProgressBar" parent="Boss_one/TextureProgressBar"]
+z_index = -1
+layout_mode = 0
+offset_left = 156.123
+offset_top = 277.094
+offset_right = 220.123
+offset_bottom = 341.094
+scale = Vector2(3.68326, 0.404256)
+fill_mode = 1
+texture_under = SubResource("GradientTexture2D_c1cqn")
+texture_progress = SubResource("GradientTexture2D_bmbg6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boss_one"]
+position = Vector2(5.1282, -26.087)
+shape = SubResource("RectangleShape2D_lir33")
+
+[node name="Marker2D" type="Marker2D" parent="Boss_one"]
+scale = Vector2(5.12821, 4.34783)
+
+[node name="Marker2D2" type="Marker2D" parent="Boss_one"]
+position = Vector2(-138.462, 52.1739)
+scale = Vector2(5.12821, 4.34783)
+
+[node name="attack_positions" type="Node2D" parent="."]
+position = Vector2(0, 5)
+
+[node name="barra_position" type="Marker2D" parent="."]
+position = Vector2(0, 73)
+
+[connection signal="body_entered" from="Boss_one/check_player_area" to="Boss_one" method="_on_check_player_area_body_entered"]
+[connection signal="value_changed" from="Boss_one/TextureProgressBar/Barra_de_vida" to="Boss_one" method="_on_barra_de_vida_value_changed"]

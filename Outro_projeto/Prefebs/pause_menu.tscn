@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://b17q4m80e5utd"]
+
+[ext_resource type="Script" uid="uid://cgyyvfwkshvwu" path="res://Outro_projeto/Scripts/pause_menu.gd" id="1_8nmym"]
+[ext_resource type="FontFile" uid="uid://hy3eisy7q1nn" path="res://Outro_projeto/Assets/Fonts/Kenney Mini Square.ttf" id="2_xetq4"]
+[ext_resource type="FontFile" uid="uid://hmqq6q6tyvah" path="res://Outro_projeto/Assets/Fonts/Kenney Mini Square Mono.ttf" id="3_5rhm4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdwps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xetq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rhm4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3sxab"]
+
+[node name="Pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_8nmym")
+
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.2)
+
+[node name="menu" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -66.0
+offset_right = 38.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="pause_btn" type="Button" parent="menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.431373, 0, 1)
+theme_override_colors/font_color = Color(0, 0.717647, 0, 1)
+theme_override_fonts/font = ExtResource("2_xetq4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qdwps")
+text = "Voltar"
+
+[node name="quit_btn" type="Button" parent="menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5rhm4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qdwps")
+text = "Lobby"
+
+[node name="reset" type="Button" parent="menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.498039, 0.0117647, 0.568627, 1)
+theme_override_colors/font_color = Color(0.49935, 0.0105463, 0.569615, 1)
+theme_override_fonts/font = ExtResource("2_xetq4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xetq4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5rhm4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3sxab")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qdwps")
+text = "Resetar"
+
+[node name="options" type="Button" parent="menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.604097, 0.0137515, 3.36915e-07, 1)
+theme_override_colors/font_color = Color(0.603922, 0.0156863, 0, 1)
+theme_override_fonts/font = ExtResource("2_xetq4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xetq4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5rhm4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3sxab")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qdwps")
+text = "Options"
+
+[node name="Escolher_modo" type="Button" parent="menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.603922, 0.733333, 0, 1)
+theme_override_colors/font_color = Color(0.603922, 0.733333, 0, 1)
+theme_override_fonts/font = ExtResource("2_xetq4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xetq4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5rhm4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3sxab")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qdwps")
+text = "Escolher_Modos"
+
+[connection signal="pressed" from="menu/pause_btn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="menu/quit_btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="menu/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="menu/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="menu/Escolher_modo" to="." method="_on_escolher_modo_pressed"]

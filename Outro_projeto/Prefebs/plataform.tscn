@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccel435lxajcf"]
+
+[ext_resource type="Script" uid="uid://j80ah1qwuhig" path="res://Outro_projeto/Scripts/plataform_static.gd" id="1_7k58m"]
+[ext_resource type="Texture2D" uid="uid://by2db2kenjdh3" path="res://Outro_projeto/Assets/platformPack_tile040.png" id="1_otnoh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yppm7"]
+size = Vector2(53.5714, 26.7857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k58m"]
+size = Vector2(56, 28)
+
+[node name="plataform" type="Node2D"]
+
+[node name="plataform_static" type="StaticBody2D" parent="." groups=["plataforma"]]
+scale = Vector2(0.56, 0.56)
+script = ExtResource("1_7k58m")
+
+[node name="Area2D" type="Area2D" parent="plataform_static"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataform_static/Area2D"]
+position = Vector2(14.2857, -0.892857)
+shape = SubResource("RectangleShape2D_yppm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="plataform_static"]
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("1_otnoh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="plataform_static"]
+position = Vector2(28, 0)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("1_otnoh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataform_static"]
+position = Vector2(14, 0)
+shape = SubResource("RectangleShape2D_7k58m")
+one_way_collision = true
+
+[connection signal="body_entered" from="plataform_static/Area2D" to="plataform_static" method="_on_area_2d_body_entered"]

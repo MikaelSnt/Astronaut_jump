@@ -1,0 +1,290 @@
+[gd_scene load_steps=45 format=3 uid="uid://d1i3rw5j00qrf"]
+
+[ext_resource type="Script" uid="uid://b8cqwk5redwmv" path="res://Outro_projeto/Scripts/options.gd" id="1_7hfu2"]
+[ext_resource type="Shader" uid="uid://c6vufy3pgrwdt" path="res://Shaders/moviment_clouds.gdshader" id="2_rgk6s"]
+[ext_resource type="Texture2D" uid="uid://66sokrgal4q4" path="res://Outro_projeto/imagens/Fundo jogo.png" id="3_mptgy"]
+[ext_resource type="Texture2D" uid="uid://bedbyqxi2p1s4" path="res://Outro_projeto/imagens/Fundo_highscore-removebg-preview.png" id="4_tgmab"]
+[ext_resource type="FontFile" uid="uid://b5cenjnnpxvh3" path="res://Outro_projeto/Assets/Fonts/PressStart2P-Regular.ttf" id="5_o2bbv"]
+[ext_resource type="Texture2D" uid="uid://npulwm3w1pb6" path="res://Outro_projeto/imagens/WhatsApp_Image_2025-06-28_at_4.00.30_PM-removebg-preview.png" id="6_ktlkk"]
+[ext_resource type="Texture2D" uid="uid://ckh672lp3j1bb" path="res://Outro_projeto/imagens/Loja.png" id="7_kjtoh"]
+[ext_resource type="Texture2D" uid="uid://bi465r4meo7go" path="res://Outro_projeto/imagens/Logo_nova.png" id="8_ayhej"]
+[ext_resource type="Texture2D" uid="uid://bwjbd48qonwv7" path="res://Outro_projeto/Assets/Botoes/Sound-Three.png" id="9_pclv4"]
+[ext_resource type="Texture2D" uid="uid://dnis5uf5drav6" path="res://Outro_projeto/Assets/Botoes/ToggleOn.png" id="10_mptgy"]
+[ext_resource type="Texture2D" uid="uid://g1bxfhioml3y" path="res://Outro_projeto/Assets/Botoes/ToggleOff.png" id="11_tgmab"]
+[ext_resource type="Texture2D" uid="uid://cubk7aispi3co" path="res://Outro_projeto/Assets/Botoes/Music-On.png" id="12_tgmab"]
+[ext_resource type="AudioStream" uid="uid://d318dajd7nbif" path="res://Outro_projeto/Audios/194059__potentjello__buttons-and-knobs-2.wav" id="13_o2bbv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdnlb"]
+shader = ExtResource("2_rgk6s")
+shader_parameter/move_speed = 0.5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l57l3"]
+texture = ExtResource("4_tgmab")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf8yf"]
+texture = ExtResource("6_ktlkk")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xplc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2dqo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8e2m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhyhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cugir"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gopxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cg6ng"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yjwgk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phndu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6u8y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q07hq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr66e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kf8yf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3asre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_krubr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkb1f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ffag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnl4t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ruyht"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhcaf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgmab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2bbv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktlkk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjtoh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayhej"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pclv4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdnlb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l57l3"]
+
+[node name="Options" type="Node2D"]
+script = ExtResource("1_7hfu2")
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_bdnlb")
+anchors_preset = -1
+anchor_left = -0.280556
+anchor_top = -0.315625
+anchor_right = 1.23611
+anchor_bottom = 1.19687
+offset_left = -14.0
+offset_top = -37.0
+offset_right = 259.0
+offset_bottom = 447.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.785298, 0.812423)
+texture = ExtResource("3_mptgy")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="BG_two" type="PanelContainer" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(0, 47.095)
+offset_left = 39.0
+offset_top = 57.0
+offset_right = 153.0
+offset_bottom = 104.095
+scale = Vector2(0.909608, 0.757665)
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_l57l3")
+
+[node name="title_options" type="Label" parent="BG_two"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_o2bbv")
+text = "Opções"
+
+[node name="BG_blue" type="PanelContainer" parent="."]
+z_index = -2
+offset_left = 5.0
+offset_top = 26.0
+offset_right = 45.0
+offset_bottom = 66.0
+scale = Vector2(4.364, 5.972)
+pivot_offset = Vector2(0, -3.42)
+theme_override_styles/panel = SubResource("StyleBoxTexture_kf8yf")
+
+[node name="loja" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 798.0
+offset_bottom = 919.0
+scale = Vector2(0.06, 0.06)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xplc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h2dqo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g8e2m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhyhe")
+icon = ExtResource("7_kjtoh")
+
+[node name="icon_astro" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 4.0
+offset_right = 232.0
+offset_bottom = 216.0
+scale = Vector2(0.291735, 0.240361)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cugir")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gopxs")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cg6ng")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yjwgk")
+icon = ExtResource("8_ayhej")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="icon_astro"]
+
+[node name="Icone_sound" type="Button" parent="."]
+offset_left = 26.0
+offset_top = 93.0
+offset_right = 90.0
+offset_bottom = 157.0
+scale = Vector2(0.415924, 0.423396)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_phndu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y6u8y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q07hq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hr66e")
+icon = ExtResource("9_pclv4")
+
+[node name="title_sound" type="Label" parent="Icone_sound"]
+layout_mode = 2
+offset_left = 98.5758
+offset_top = 11.8093
+offset_right = 146.576
+offset_bottom = 27.8093
+scale = Vector2(1.90262, 2.43549)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_o2bbv")
+text = "Som"
+
+[node name="Check_sound" type="CheckButton" parent="Icone_sound"]
+layout_mode = 0
+offset_left = 170.704
+offset_top = -7.08557
+offset_right = 353.704
+offset_bottom = 90.9144
+scale = Vector2(0.855244, 0.874463)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kf8yf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3asre")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_krubr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hkb1f")
+theme_override_icons/checked = ExtResource("10_mptgy")
+theme_override_icons/unchecked = ExtResource("11_tgmab")
+button_pressed = true
+
+[node name="Icone_music" type="Button" parent="."]
+offset_left = 26.0
+offset_top = 151.0
+offset_right = 90.0
+offset_bottom = 215.0
+scale = Vector2(0.415924, 0.423396)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_phndu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y6u8y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q07hq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hr66e")
+icon = ExtResource("12_tgmab")
+
+[node name="title_sound" type="Label" parent="Icone_music"]
+layout_mode = 0
+offset_left = 79.3415
+offset_top = 11.8093
+offset_right = 175.341
+offset_bottom = 27.8093
+scale = Vector2(1.46763, 2.10017)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_o2bbv")
+text = "Musica"
+
+[node name="Check_music" type="CheckButton" parent="Icone_music"]
+layout_mode = 0
+offset_left = 177.917
+offset_top = -11.8093
+offset_right = 360.917
+offset_bottom = 86.1907
+scale = Vector2(0.855244, 0.874463)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ffag")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tnl4t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ruyht")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lhcaf")
+theme_override_icons/checked = ExtResource("10_mptgy")
+theme_override_icons/unchecked = ExtResource("11_tgmab")
+button_pressed = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 232.0
+offset_right = 457.0
+offset_bottom = 255.0
+scale = Vector2(0.363919, 0.57563)
+theme_override_fonts/font = ExtResource("5_o2bbv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tgmab")
+text = "-----------------------"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 206.0
+offset_right = 394.0
+offset_bottom = 229.0
+scale = Vector2(0.363919, 0.57563)
+theme_override_fonts/font = ExtResource("5_o2bbv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tgmab")
+text = "-----------------------"
+
+[node name="name_input" type="LineEdit" parent="."]
+offset_left = 5.0
+offset_top = 211.0
+offset_right = 211.0
+offset_bottom = 242.0
+scale = Vector2(0.870746, 0.815288)
+theme_override_fonts/font = ExtResource("5_o2bbv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o2bbv")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ktlkk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kjtoh")
+placeholder_text = "Renomear"
+alignment = 1
+
+[node name="Button" type="Button" parent="name_input"]
+layout_mode = 0
+offset_left = 51.6798
+offset_top = 67.4608
+offset_right = 147.68
+offset_bottom = 83.4608
+theme_override_fonts/font = ExtResource("5_o2bbv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayhej")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pclv4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bdnlb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l57l3")
+text = "Enviar"
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_o2bbv")
+volume_db = 0.275
+
+[connection signal="pressed" from="loja" to="." method="_on_loja_pressed"]
+[connection signal="pressed" from="icon_astro" to="." method="_on_icon_astro_pressed"]
+[connection signal="toggled" from="Icone_sound/Check_sound" to="." method="_on_check_sound_toggled"]
+[connection signal="toggled" from="Icone_music/Check_music" to="." method="_on_check_music_toggled"]
+[connection signal="text_submitted" from="name_input" to="." method="_on_name_input_text_submitted"]
+[connection signal="pressed" from="name_input/Button" to="." method="_on_button_pressed"]

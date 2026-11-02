@@ -1,0 +1,211 @@
+[gd_scene load_steps=8 format=3 uid="uid://dj12rqsnteshb"]
+
+[ext_resource type="Script" uid="uid://ccjp2ona7kx7g" path="res://Outro_projeto/Scripts/inimigo_met.gd" id="1_2qkrp"]
+[ext_resource type="Texture2D" uid="uid://cyqqfafkvimur" path="res://Outro_projeto/Assets/Enemies/imagem_2025-06-25_231344523-removebg-preview.png" id="2_h10ip"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eljex"]
+radius = 2.21788
+height = 11.1012
+
+[sub_resource type="Animation" id="Animation_7q2bh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(113, -22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.29, 2.29)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hit_box:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hit_box:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_i7wwv"]
+resource_name = "queda_direita"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(296, -163), Vector2(-18, 346)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(9.73, 9.73), Vector2(1.06, 1.06)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hit_box:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hit_box:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_2qkrp"]
+resource_name = "queda_esquerda"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-44, -25), Vector2(-143, -126), Vector2(190, 328)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7.08, 7.08), Vector2(1.06, 1.06)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hit_box:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hit_box:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 1]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hit_box")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_676qe"]
+_data = {
+&"RESET": SubResource("Animation_7q2bh"),
+&"queda_direita": SubResource("Animation_i7wwv"),
+&"queda_esquerda": SubResource("Animation_2qkrp")
+}
+
+[node name="inimigo_3" type="Node2D" groups=["inimigo"]]
+
+[node name="inimigo_met" type="StaticBody2D" parent="." groups=["inimigo"]]
+position = Vector2(113, -22)
+scale = Vector2(2.29, 2.29)
+script = ExtResource("1_2qkrp")
+speed = 200
+
+[node name="texture" type="Sprite2D" parent="inimigo_met"]
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("2_h10ip")
+region_enabled = true
+region_rect = Rect2(102, 4, 265, 211)
+
+[node name="hit_box" type="Area2D" parent="inimigo_met" groups=["inimigo"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo_met/hit_box"]
+position = Vector2(1, -2.98023e-08)
+rotation = 0.869028
+scale = Vector2(0.716508, 1.11112)
+shape = SubResource("CapsuleShape2D_eljex")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="inimigo_met"]
+libraries = {
+&"": SubResource("AnimationLibrary_676qe")
+}
+autoplay = "queda_direita"
+
+[connection signal="body_entered" from="inimigo_met/hit_box" to="inimigo_met" method="_on_hit_box_body_entered"]

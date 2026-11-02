@@ -1,0 +1,217 @@
+[gd_scene load_steps=30 format=3 uid="uid://wglwpqfj13s1"]
+
+[ext_resource type="Script" uid="uid://dh5scvwm1wqb3" path="res://Outro_projeto/Scripts/hud.gd" id="1_cfsk7"]
+[ext_resource type="Texture2D" uid="uid://d2li7ugnh6vi3" path="res://Outro_projeto/imagens/buttons (5).png" id="2_1m4br"]
+[ext_resource type="Texture2D" uid="uid://bxc0u5uljcdno" path="res://Outro_projeto/imagens/buttons (3).png" id="3_byxxe"]
+[ext_resource type="Texture2D" uid="uid://2rg5c73ujxb" path="res://Outro_projeto/imagens/buttons (2).png" id="4_1m4br"]
+[ext_resource type="Texture2D" uid="uid://bxuplb1yyfmc" path="res://Outro_projeto/imagens/buttons (1).png" id="4_jy0bl"]
+[ext_resource type="Texture2D" uid="uid://bu5x5mvrf5pcy" path="res://Outro_projeto/imagens/buttons.png" id="5_us6ql"]
+[ext_resource type="Texture2D" uid="uid://bfq7wvvhykp35" path="res://Outro_projeto/imagens/buttons (4).png" id="7_gxvv2"]
+[ext_resource type="Texture2D" uid="uid://b85vopajvg7qb" path="res://Outro_projeto/imagens/pause_btn (1).png" id="8_byxxe"]
+[ext_resource type="Texture2D" uid="uid://ctlj8njh3q03k" path="res://Outro_projeto/Assets/Effects_explosition/Purple Effect Bullet Impact Explosion 32x32.png" id="8_gxvv2"]
+[ext_resource type="Texture2D" uid="uid://cc1cja7vhaaqm" path="res://Outro_projeto/imagens/Pause.png" id="9_byxxe"]
+[ext_resource type="AudioStream" uid="uid://d318dajd7nbif" path="res://Outro_projeto/Audios/194059__potentjello__buttons-and-knobs-2.wav" id="10_3prm4"]
+[ext_resource type="PackedScene" uid="uid://37lqjqgbnap5" path="res://Outro_projeto/Prefebs/Atmosfera.tscn" id="12_jy0bl"]
+[ext_resource type="Script" uid="uid://bnyxqkliy8vrm" path="res://Outro_projeto/Scripts/moedas.gd" id="13_byxxe"]
+[ext_resource type="Texture2D" uid="uid://4kk30npkgb80" path="res://Outro_projeto/imagens/Moeda_sem_fundo.png" id="14_gxvv2"]
+[ext_resource type="Texture2D" uid="uid://piexsab7b5sh" path="res://Outro_projeto/imagens/imagem_2025-06-29_111230593-removebg-preview.png" id="15_isr7o"]
+[ext_resource type="FontFile" uid="uid://b5cenjnnpxvh3" path="res://Outro_projeto/Assets/Fonts/PressStart2P-Regular.ttf" id="16_gxvv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p7m1"]
+size = Vector2(253.262, 248.927)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edk4v"]
+size = Vector2(253.262, 253.262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns20l"]
+size = Vector2(253.262, 253.262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isr7o"]
+atlas = ExtResource("8_gxvv2")
+region = Rect2(448, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1wii"]
+atlas = ExtResource("8_gxvv2")
+region = Rect2(416, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaalk"]
+atlas = ExtResource("8_gxvv2")
+region = Rect2(384, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n54w"]
+atlas = ExtResource("8_gxvv2")
+region = Rect2(352, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtnnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isr7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1wii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaalk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n54w")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_byxxe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isr7o"]
+texture = ExtResource("8_byxxe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1wii"]
+texture = ExtResource("8_byxxe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxvv2"]
+texture = ExtResource("9_byxxe")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1wii"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_cfsk7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.0784314)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="MarginContainer"]
+position = Vector2(-41, 170)
+scale = Vector2(0.134, 0.134)
+texture_normal = ExtResource("2_1m4br")
+texture_pressed = ExtResource("3_byxxe")
+shape = SubResource("RectangleShape2D_8p7m1")
+action = "mv_esquerdo"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="MarginContainer"]
+position = Vector2(16, 170)
+scale = Vector2(0.134, 0.134)
+texture_normal = ExtResource("5_us6ql")
+texture_pressed = ExtResource("4_1m4br")
+shape = SubResource("RectangleShape2D_edk4v")
+action = "Pulo"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="MarginContainer"]
+position = Vector2(74, 170)
+scale = Vector2(0.134, 0.134)
+texture_normal = ExtResource("4_jy0bl")
+texture_pressed = ExtResource("7_gxvv2")
+shape = SubResource("RectangleShape2D_ns20l")
+action = "mv_direito"
+
+[node name="attack_button" type="TouchScreenButton" parent="MarginContainer"]
+process_mode = 1
+visible = false
+position = Vector2(89, 301)
+scale = Vector2(0.134, 0.134)
+shape = SubResource("RectangleShape2D_edk4v")
+action = "Pulo"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/attack_button"]
+position = Vector2(14.9254, -7.46289)
+rotation = 1.5708
+scale = Vector2(7.84077, 8.47525)
+sprite_frames = SubResource("SpriteFrames_mtnnv")
+animation = &"attack"
+frame = 3
+frame_progress = 0.107751
+
+[node name="pause_btna" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 37.0
+scale = Vector2(0.738956, 0.76526)
+theme_override_styles/focus = SubResource("StyleBoxTexture_byxxe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_isr7o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q1wii")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gxvv2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3prm4")
+volume_db = 0.275
+
+[node name="Altura" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 152.0
+offset_bottom = 28.0
+scale = Vector2(0.648315, 0.680646)
+theme_override_fonts/font = ExtResource("16_gxvv2")
+text = "Altura "
+
+[node name="Altura2" type="Label" parent="Altura"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.1749
+offset_top = 2.93838
+offset_right = 209.175
+offset_bottom = 25.9384
+scale = Vector2(0.765023, 0.871333)
+theme_override_fonts/font = ExtResource("16_gxvv2")
+text = ":"
+
+[node name="Atmosfera" parent="." instance=ExtResource("12_jy0bl")]
+offset_top = 133.0
+offset_bottom = 156.0
+
+[node name="moedas" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 20.0
+offset_right = 195.0
+offset_bottom = 43.0
+scale = Vector2(0.741485, 0.776294)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_gxvv2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q1wii")
+text = " 0"
+script = ExtResource("13_byxxe")
+
+[node name="icone" type="TextureRect" parent="."]
+offset_left = 123.0
+offset_top = 14.0
+offset_right = 163.0
+offset_bottom = 54.0
+scale = Vector2(0.50656, 0.566876)
+texture = ExtResource("14_gxvv2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="circulo" type="Sprite2D" parent="icone"]
+z_index = -1
+position = Vector2(19.741, 19.4046)
+scale = Vector2(0.0660838, 0.0670489)
+texture = ExtResource("15_isr7o")
+
+[node name="Label" type="Label" parent="icone"]
+layout_mode = 0
+offset_left = 37.5079
+offset_top = 15.8765
+offset_right = 77.5079
+offset_bottom = 38.8765
+scale = Vector2(0.806036, 0.636239)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_gxvv2")
+text = "X"
+
+[connection signal="pressed" from="pause_btna" to="." method="_on_pause_btna_pressed"]

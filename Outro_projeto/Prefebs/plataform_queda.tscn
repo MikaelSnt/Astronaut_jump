@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqs3p7c1uwydv"]
+
+[ext_resource type="Script" uid="uid://dkciginylbyxd" path="res://Outro_projeto/Scripts/plataform_queda.gd" id="1_dn5om"]
+[ext_resource type="Texture2D" uid="uid://byvvbwbesp3xy" path="res://Outro_projeto/Assets/Enemies/cloud.png" id="1_lg0hb"]
+
+[sub_resource type="Animation" id="Animation_j8lqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4c6l5"]
+resource_name = "balanco"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.433333, 0.633333, 0.833333, 1.1, 1.26667, 1.43333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(109, -3), Vector2(-19, -3), Vector2(58, -4), Vector2(60, 60), Vector2(64, 122), Vector2(71, 187), Vector2(74, 232)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pu1qt"]
+_data = {
+&"RESET": SubResource("Animation_j8lqi"),
+&"balanco": SubResource("Animation_4c6l5")
+}
+
+[node name="plataform_queda" type="Node2D"]
+
+[node name="plataform_queda" type="StaticBody2D" parent="." groups=["plataforma"]]
+scale = Vector2(0.17, 0.17)
+script = ExtResource("1_dn5om")
+
+[node name="Area2D" type="Area2D" parent="plataform_queda"]
+position = Vector2(-1, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="plataform_queda/Area2D"]
+position = Vector2(-10.7647, -41.1765)
+scale = Vector2(0.54, 0.54)
+polygon = PackedVector2Array(-185.185, 87.146, -152.505, 43.573, -98.0392, 0, -65.3595, -21.7865, -43.573, -32.6797, -21.7865, -43.573, 10.8932, -43.573, 32.6797, -43.573, 54.4662, -43.573, 65.3595, -21.7865, 98.0392, -10.8932, 130.412, 5.88235, 124.529, 5.88235, 141.612, 10.8932, 152.505, 10.8932, 174.292, 32.6797, 185.185, 54.4662, 185.185, 87.146, 141.612, 87.146, 98.0392, 87.146, 54.4662, 87.146, 10.8932, 87.146, -54.4662, 87.146, -108.932, 87.146)
+
+[node name="Cloud" type="Sprite2D" parent="plataform_queda"]
+texture = ExtResource("1_lg0hb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="plataform_queda"]
+position = Vector2(5.88235, 5.88235)
+polygon = PackedVector2Array(-117.647, 9.53674e-07, -105.882, -17.6471, -88.2353, -29.4118, -70.5882, -41.1765, -47.0588, -58.8235, -23.5294, -64.7059, -5.88235, -64.7059, 5.88235, -58.8235, 17.6471, -47.0588, 41.1765, -41.1765, 47.0588, -41.1765, 58.8235, -41.1765, 76.4706, -23.5294, 82.3529, -11.7647, 82.3529, 9.53674e-07)
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataform_queda"]
+libraries = {
+&"": SubResource("AnimationLibrary_pu1qt")
+}
+
+[connection signal="body_entered" from="plataform_queda/Area2D" to="plataform_queda" method="_on_area_2d_body_entered"]

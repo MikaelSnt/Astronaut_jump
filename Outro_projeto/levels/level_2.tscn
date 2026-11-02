@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbfnldqf8w01u"]
+
+[ext_resource type="Texture2D" uid="uid://xshksicypquq" path="res://Outro_projeto/imagens/exosfera_teste.jpg" id="1_j67ym"]
+[ext_resource type="FontFile" uid="uid://b5cenjnnpxvh3" path="res://Outro_projeto/Assets/Fonts/PressStart2P-Regular.ttf" id="2_4c5yw"]
+
+[node name="level_2" type="Node2D"]
+
+[node name="ExosferaTeste" type="Sprite2D" parent="."]
+position = Vector2(104, 91)
+scale = Vector2(0.16, 0.405)
+texture = ExtResource("1_j67ym")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 126.0
+offset_right = 231.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("2_4c5yw")
+text = "Em breve..... 
+atualizações"

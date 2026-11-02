@@ -1,0 +1,211 @@
+[gd_scene load_steps=30 format=3 uid="uid://cdms0klfpppb0"]
+
+[ext_resource type="Script" uid="uid://c62uwuve7k7d1" path="res://Outro_projeto/Scripts/menu.gd" id="1_58rn3"]
+[ext_resource type="Texture2D" uid="uid://dwxuv372c7ffq" path="res://Outro_projeto/Animation/Player/Joinha (1).png" id="3_cfxw3"]
+[ext_resource type="Texture2D" uid="uid://dp7p4rk6sv8wv" path="res://Outro_projeto/Animation/Player/Joinha (2).png" id="4_an3qh"]
+[ext_resource type="Texture2D" uid="uid://cpy2h6176k1tc" path="res://Outro_projeto/Animation/Player/Joinha (3).png" id="5_wbv3m"]
+[ext_resource type="Shader" uid="uid://c6vufy3pgrwdt" path="res://Shaders/moviment_clouds.gdshader" id="6_1fagx"]
+[ext_resource type="Texture2D" uid="uid://ckh672lp3j1bb" path="res://Outro_projeto/imagens/Loja.png" id="8_1fagx"]
+[ext_resource type="Texture2D" uid="uid://66sokrgal4q4" path="res://Outro_projeto/imagens/Fundo jogo.png" id="9_1fagx"]
+[ext_resource type="Texture2D" uid="uid://bi465r4meo7go" path="res://Outro_projeto/imagens/Logo_nova.png" id="11_mnh4m"]
+[ext_resource type="Texture2D" uid="uid://bd3uo8u4lhhdl" path="res://Outro_projeto/imagens/menu_icon.png" id="12_874fh"]
+[ext_resource type="FontFile" uid="uid://b5cenjnnpxvh3" path="res://Outro_projeto/Assets/Fonts/PressStart2P-Regular.ttf" id="14_7g10s"]
+[ext_resource type="AudioStream" uid="uid://d318dajd7nbif" path="res://Outro_projeto/Audios/194059__potentjello__buttons-and-knobs-2.wav" id="15_qxfkr"]
+[ext_resource type="Texture2D" uid="uid://del1ntj2svb2" path="res://Outro_projeto/imagens/Ranking.png" id="16_cg7st"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kexqw"]
+shader = ExtResource("6_1fagx")
+shader_parameter/move_speed = 0.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kut2e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08u6i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftlnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtqni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mmjgc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fagx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kexqw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mnh4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2d4c4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7k8y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfjx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8i6pw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1yd7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fagx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kexqw"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qxfkr"]
+frames = 5
+speed_scale = 1.5
+frame_0/texture = ExtResource("3_cfxw3")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("4_an3qh")
+frame_1/duration = 0.25
+frame_2/texture = ExtResource("5_wbv3m")
+frame_2/duration = 0.25
+frame_3/texture = ExtResource("4_an3qh")
+frame_3/duration = 0.53
+frame_4/texture = ExtResource("5_wbv3m")
+frame_4/duration = 0.6
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.08501
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_58rn3")
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_kexqw")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.280556
+anchor_top = -0.315625
+anchor_right = 1.23611
+anchor_bottom = 1.19687
+offset_left = 46.5
+offset_top = 82.0
+offset_right = -46.5
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03455, 1.12772)
+texture = ExtResource("9_1fagx")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="loja" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.9611
+offset_top = 12.5878
+offset_right = 796.961
+offset_bottom = 924.588
+scale = Vector2(0.06, 0.06)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kut2e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_08u6i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ftlnv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xtqni")
+icon = ExtResource("8_1fagx")
+
+[node name="icon_astro" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 8.7146
+offset_right = 223.0
+offset_bottom = 220.715
+scale = Vector2(0.4, 0.4)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kut2e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_08u6i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ftlnv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mmjgc")
+icon = ExtResource("11_mnh4m")
+
+[node name="menu_icon" type="Button" parent="."]
+layout_mode = 0
+offset_left = 142.572
+offset_top = 24.2072
+offset_right = 702.572
+offset_bottom = 744.207
+scale = Vector2(0.0556825, 0.05425)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1fagx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kexqw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mnh4m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2d4c4")
+icon = ExtResource("12_874fh")
+
+[node name="recorde" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.98201
+offset_top = 179.133
+offset_right = 277.982
+offset_bottom = 214.133
+scale = Vector2(0.62, 0.62)
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("14_7g10s")
+text = "Recorde de Altura"
+
+[node name="recorde_score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.9042
+offset_top = 199.467
+offset_right = 211.904
+offset_bottom = 215.467
+scale = Vector2(0.65, 0.65)
+theme_override_fonts/font = ExtResource("14_7g10s")
+text = "0"
+horizontal_alignment = 1
+
+[node name="ranking" type="Button" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 286.0
+offset_right = 239.0
+offset_bottom = 372.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j7k8y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yfjx8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8i6pw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1yd7i")
+icon = ExtResource("16_cg7st")
+
+[node name="leaderboard" type="TouchScreenButton" parent="ranking"]
+position = Vector2(57.0667, 34.1486)
+scale = Vector2(4.78423, 2.93105)
+shape = SubResource("RectangleShape2D_1fagx")
+
+[node name="aperte_aqui" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.985
+offset_top = 116.195
+offset_right = 388.985
+offset_bottom = 139.195
+scale = Vector2(0.46, 0.734)
+theme_override_fonts/font = ExtResource("14_7g10s")
+text = "Aperte aqui para começar"
+
+[node name="start_btn" type="TouchScreenButton" parent="aperte_aqui"]
+position = Vector2(188.565, 7.91515)
+scale = Vector2(19.4592, 1.48216)
+shape = SubResource("RectangleShape2D_kexqw")
+
+[node name="Mini_boneco" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 281.0
+offset_right = 449.001
+offset_bottom = 564.0
+scale = Vector2(0.189, 0.14)
+size_flags_vertical = 3
+texture = SubResource("AnimatedTexture_qxfkr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_qxfkr")
+volume_db = 0.275
+
+[connection signal="pressed" from="loja" to="." method="_on_loja_pressed"]
+[connection signal="pressed" from="menu_icon" to="." method="_on_menu_icon_pressed"]
+[connection signal="pressed" from="ranking/leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="aperte_aqui/start_btn" to="." method="_on_start_btn_pressed"]

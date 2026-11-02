@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://brgeexnwklwka"]
+
+[ext_resource type="Texture2D" uid="uid://bqgoy6qcs86pq" path="res://Outro_projeto/Assets/Enemies/flyMan_fly.png" id="1_1v7uh"]
+[ext_resource type="Script" uid="uid://bxwben3k72mj6" path="res://Outro_projeto/Scripts/inimigo_fly.gd" id="1_54n75"]
+[ext_resource type="Texture2D" uid="uid://bxc3o453bydd" path="res://Outro_projeto/Assets/Enemies/flyMan_still_fly.png" id="3_28nh8"]
+[ext_resource type="Texture2D" uid="uid://ewpu7cvfdnvm" path="res://Outro_projeto/Assets/Enemies/flyMan_still_jump.png" id="4_tn5l2"]
+[ext_resource type="Texture2D" uid="uid://be677fweyqom4" path="res://Outro_projeto/Assets/Enemies/flyMan_jump.png" id="5_411xl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54n75"]
+atlas = ExtResource("1_1v7uh")
+region = Rect2(0, 0, 122, 139)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocx2n"]
+atlas = ExtResource("3_28nh8")
+region = Rect2(0, 0, 120, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3b3j"]
+atlas = ExtResource("1_1v7uh")
+region = Rect2(0, 0, 122, 139)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wiomg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54n75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocx2n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3b3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tn5l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_411xl")
+}],
+"loop": true,
+"name": &"voando",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2cw8"]
+size = Vector2(121, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28nh8"]
+size = Vector2(100, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tn5l2"]
+size = Vector2(118, 29)
+
+[node name="inimigo" type="Node2D"]
+
+[node name="inimigo_fly" type="StaticBody2D" parent="." groups=["inimigo"]]
+scale = Vector2(0.155, 0.155)
+script = ExtResource("1_54n75")
+
+[node name="anim" type="AnimatedSprite2D" parent="inimigo_fly"]
+sprite_frames = SubResource("SpriteFrames_wiomg")
+animation = &"voando"
+autoplay = "voando"
+flip_h = true
+
+[node name="hurt_box" type="Area2D" parent="inimigo_fly"]
+
+[node name="hurt_box" type="CollisionShape2D" parent="inimigo_fly/hurt_box"]
+position = Vector2(-1, -54)
+shape = SubResource("RectangleShape2D_n2cw8")
+
+[node name="hit_box" type="Area2D" parent="inimigo_fly"]
+
+[node name="hit_box" type="CollisionShape2D" parent="inimigo_fly/hit_box"]
+position = Vector2(1, 20)
+shape = SubResource("RectangleShape2D_28nh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo_fly"]
+position = Vector2(1, -50.5)
+shape = SubResource("RectangleShape2D_tn5l2")
+one_way_collision = true
+
+[connection signal="body_entered" from="inimigo_fly/hurt_box" to="inimigo_fly" method="_on_hurt_box_body_entered"]
+[connection signal="body_entered" from="inimigo_fly/hit_box" to="inimigo_fly" method="_on_hit_box_body_entered"]

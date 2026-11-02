@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2klpt3n6wwx0"]
+
+[ext_resource type="Script" uid="uid://crvsr7cf2aevk" path="res://Outro_projeto/Scripts/inimigo_heli.gd" id="1_bqrfp"]
+[ext_resource type="Texture2D" uid="uid://byvmlp67bvxrs" path="res://Outro_projeto/Assets/Enemies/ChatGPT Image 27 de jun. de 2025, 00_01_39 (1).png" id="2_humrw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igad7"]
+atlas = ExtResource("2_humrw")
+region = Rect2(0, 0, 4096, 4096)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1od5"]
+atlas = ExtResource("2_humrw")
+region = Rect2(4096, 0, 4096, 4096)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxfvm"]
+atlas = ExtResource("2_humrw")
+region = Rect2(8192, 0, 4096, 4096)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32cgu"]
+atlas = ExtResource("2_humrw")
+region = Rect2(12288, 0, 4096, 4096)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i65fa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igad7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1od5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxfvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32cgu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="inimigo_4" type="Node2D"]
+
+[node name="inimigo_heli" type="StaticBody2D" parent="." groups=["inimigo"]]
+scale = Vector2(0.08, 0.08)
+script = ExtResource("1_bqrfp")
+speed = 90
+
+[node name="texture" type="AnimatedSprite2D" parent="inimigo_heli"]
+position = Vector2(99, 121)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_i65fa")
+autoplay = "default"
+frame = 2
+frame_progress = 0.537618
+
+[node name="hit_box" type="Area2D" parent="inimigo_heli" groups=["inimigo"]]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="inimigo_heli/hit_box"]
+position = Vector2(190, 97)
+polygon = PackedVector2Array(194, 160, 195, 173, 187, 172, 189, 180, -156, 183, -156, 173, -88, 173, -89, 117, -218, 10, -366, -9, -426, 58, -473, 61, -442, -19, -452, -44, -479, -135, -471, -157, -426, -154, -363, -39, -194, -40, -142, -80, -58, -85, -46, -106, -43, -142, -337, -144, -342, -157, -331, -166, 275, -165, 278, -150, 277, -141, -19, -147, -23, -109, 18, -108, 39, -80, 107, -70, 169, -15, 188, 29, 230, 43, 235, 61, 218, 87, 188, 104, 151, 113, 116, 118, 110, 171, 175, 171, 176, 156)
+
+[connection signal="body_entered" from="inimigo_heli/hit_box" to="inimigo_heli" method="_on_hit_box_body_entered"]

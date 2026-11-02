@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlxbwr6518xp2"]
+
+[ext_resource type="FontFile" uid="uid://cgak1f7rmg8lo" path="res://Outro_projeto/Assets/Fonts/Kenney Pixel Square.ttf" id="1_nb4oc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8h2w"]
+
+[sub_resource type="Animation" id="Animation_7jmec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Loa"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.227451)]
+}
+
+[sub_resource type="Animation" id="Animation_14t5x"]
+resource_name = "loading"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.5, 0.566667, 0.6, 0.666667, 0.733333, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["C", "Ca", "Car", "Carr", "Carreg", "Carrega", "Carregand", "Carregando
+P", "Carregando 
+Pon", "Carregando 
+Pontu", "Carregando 
+Pontuaç", "Carregando 
+Pontuação", "Carregando 
+Pontuação.", "Carregando 
+Pontuação...", "Carregando 
+Pontuação...."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.22, 0.45, 0.66, 0.87, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.227451), Color(1, 1, 1, 0.317647), Color(1, 1, 1, 0.462745), Color(1, 1, 1, 0.635294), Color(1, 1, 1, 0.760784), Color(1, 1, 1, 0.898039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ls6ie"]
+_data = {
+&"RESET": SubResource("Animation_7jmec"),
+&"loading": SubResource("Animation_14t5x")
+}
+
+[node name="loading" type="Label"]
+self_modulate = Color(1, 1, 1, 0.227451)
+offset_left = 2.0
+offset_right = 164.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_nb4oc")
+text = "Loa"
+label_settings = SubResource("LabelSettings_p8h2w")
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ls6ie")
+}
+autoplay = "loading"

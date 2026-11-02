@@ -1,0 +1,23 @@
+
+# Cache e arquivos temporários da Godot
+.godot/
+*.tmp
+
+# Arquivos do sistema
+Thumbs.db
+.DS_Store
+
+# Arquivos de editores
+.vscode/
+.idea/
+
+# Builds e exportações
+/builds/
+/exports/
+*.apk
+*.aab
+*.exe
+*.pck
+
+# Arquivos Android gerados
+/android/

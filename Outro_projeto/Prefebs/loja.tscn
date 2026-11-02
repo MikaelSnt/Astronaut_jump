@@ -1,0 +1,320 @@
+[gd_scene load_steps=28 format=3 uid="uid://15rpb4b5endb"]
+
+[ext_resource type="Shader" uid="uid://c6vufy3pgrwdt" path="res://Shaders/moviment_clouds.gdshader" id="1_38r0a"]
+[ext_resource type="Script" uid="uid://brn7y01kh4bkn" path="res://Outro_projeto/Scripts/loja.gd" id="1_khodn"]
+[ext_resource type="Texture2D" uid="uid://66sokrgal4q4" path="res://Outro_projeto/imagens/Fundo jogo.png" id="2_5isie"]
+[ext_resource type="Texture2D" uid="uid://bd3uo8u4lhhdl" path="res://Outro_projeto/imagens/menu_icon.png" id="3_s3ts3"]
+[ext_resource type="Texture2D" uid="uid://crtp16vr5n10o" path="res://Outro_projeto/imagens/Fundo_loja.png" id="4_37xn1"]
+[ext_resource type="FontFile" uid="uid://b5cenjnnpxvh3" path="res://Outro_projeto/Assets/Fonts/PressStart2P-Regular.ttf" id="5_khodn"]
+[ext_resource type="Texture2D" uid="uid://npulwm3w1pb6" path="res://Outro_projeto/imagens/WhatsApp_Image_2025-06-28_at_4.00.30_PM-removebg-preview.png" id="6_prpg0"]
+[ext_resource type="Texture2D" uid="uid://cdt55m5nxyttg" path="res://Outro_projeto/imagens/imagem_2025-06-30_234229833-removebg-preview.png" id="7_1i8i6"]
+[ext_resource type="Texture2D" uid="uid://enuj81583kdb" path="res://Outro_projeto/imagens/Alphinho.png" id="7_37xn1"]
+[ext_resource type="Script" uid="uid://cjs7ebrkok44b" path="res://Outro_projeto/Scripts/moedas_gerais.gd" id="8_8ulmm"]
+[ext_resource type="Texture2D" uid="uid://c2cld8dtit3y1" path="res://Outro_projeto/imagens/Alphinha (1).png" id="8_khodn"]
+[ext_resource type="Texture2D" uid="uid://4kk30npkgb80" path="res://Outro_projeto/imagens/Moeda_sem_fundo.png" id="9_5oof2"]
+[ext_resource type="Texture2D" uid="uid://n07kfwfpbthh" path="res://Outro_projeto/imagens/ET_bilu (1).png" id="9_prpg0"]
+[ext_resource type="Texture2D" uid="uid://piexsab7b5sh" path="res://Outro_projeto/imagens/imagem_2025-06-29_111230593-removebg-preview.png" id="10_2lv77"]
+[ext_resource type="AudioStream" uid="uid://d318dajd7nbif" path="res://Outro_projeto/Audios/194059__potentjello__buttons-and-knobs-2.wav" id="15_prpg0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_go8cf"]
+shader = ExtResource("1_38r0a")
+shader_parameter/move_speed = 0.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hw4px"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mffye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4lfv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2c0bj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkgds"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bp47t"]
+texture = ExtResource("4_37xn1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtwun"]
+font = ExtResource("5_khodn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_354oi"]
+texture = ExtResource("6_prpg0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w18v5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qa7gv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0a1cj"]
+
+[node name="Loja" type="Node2D"]
+script = ExtResource("1_khodn")
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_go8cf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -13.0
+offset_right = 257.0
+offset_bottom = 471.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.804965, 0.731451)
+texture = ExtResource("2_5isie")
+
+[node name="menu_icon" type="Button" parent="."]
+offset_right = 560.0
+offset_bottom = 720.0
+scale = Vector2(0.0556825, 0.05425)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hw4px")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mffye")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n4lfv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2c0bj")
+icon = ExtResource("3_s3ts3")
+
+[node name="BG_two" type="PanelContainer" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_dkgds")
+custom_minimum_size = Vector2(0, 47.095)
+offset_left = 37.0
+offset_top = -5.0
+offset_right = 151.0
+offset_bottom = 42.095
+scale = Vector2(0.708722, 1.03577)
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bp47t")
+
+[node name="title" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 13.0
+offset_right = 120.0
+offset_bottom = 36.0
+scale = Vector2(0.617151, 0.513563)
+text = "Loja"
+label_settings = SubResource("LabelSettings_rtwun")
+
+[node name="BG_blue" type="PanelContainer" parent="."]
+z_index = -2
+offset_left = 7.0
+offset_top = 19.1963
+offset_right = 47.0
+offset_bottom = 59.1963
+scale = Vector2(1.838, 2.697)
+pivot_offset = Vector2(0, -3.42)
+theme_override_styles/panel = SubResource("StyleBoxTexture_354oi")
+
+[node name="Alphinho" type="Sprite2D" parent="BG_blue"]
+position = Vector2(19.5865, 19.6515)
+scale = Vector2(0.031, 0.021)
+texture = ExtResource("7_37xn1")
+
+[node name="Alpinho" type="Label" parent="BG_blue/Alphinho"]
+offset_left = -473.867
+offset_top = 776.877
+offset_right = -345.867
+offset_bottom = 811.877
+scale = Vector2(7.68401, 8.57974)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "Alphinho
+"
+
+[node name="BG_blue2" type="PanelContainer" parent="."]
+z_index = -2
+offset_left = 7.0
+offset_top = 153.196
+offset_right = 47.0
+offset_bottom = 193.196
+scale = Vector2(1.838, 2.697)
+pivot_offset = Vector2(0, -3.42)
+theme_override_styles/panel = SubResource("StyleBoxTexture_354oi")
+
+[node name="Alphinha" type="Sprite2D" parent="BG_blue2"]
+position = Vector2(19.5865, 20.393)
+scale = Vector2(0.021, 0.014)
+texture = ExtResource("8_khodn")
+
+[node name="Alphinha" type="Label" parent="BG_blue2/Alphinha"]
+offset_left = -699.518
+offset_top = 1112.35
+offset_right = -571.518
+offset_bottom = 1135.35
+scale = Vector2(11.0978, 16.8703)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "Alphinha"
+
+[node name="BG_blue3" type="PanelContainer" parent="."]
+z_index = -2
+offset_left = 93.0
+offset_top = 19.1963
+offset_right = 133.0
+offset_bottom = 59.1963
+scale = Vector2(1.838, 2.697)
+pivot_offset = Vector2(0, -3.42)
+theme_override_styles/panel = SubResource("StyleBoxTexture_354oi")
+
+[node name="EtBilu" type="Sprite2D" parent="BG_blue3"]
+position = Vector2(21.2187, 20.393)
+scale = Vector2(0.024, 0.016)
+texture = ExtResource("9_prpg0")
+
+[node name="ET_Bilu" type="Label" parent="BG_blue3/EtBilu"]
+offset_left = -657.418
+offset_top = 973.304
+offset_right = -545.418
+offset_bottom = 996.304
+scale = Vector2(11.5016, 11.4301)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "ET Bilu"
+
+[node name="Em_breve" type="Label" parent="."]
+offset_left = 106.0
+offset_top = 243.0
+offset_right = 234.0
+offset_bottom = 259.0
+rotation = -0.954126
+scale = Vector2(0.65, 0.65)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "Em breve"
+
+[node name="Em_breve2" type="Label" parent="Em_breve"]
+layout_mode = 0
+offset_left = -17.5713
+offset_top = 12.4562
+offset_right = 110.429
+offset_bottom = 35.4562
+rotation = 0.954695
+scale = Vector2(0.653658, 0.717191)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "Em Breve"
+
+[node name="BG_blue4" type="PanelContainer" parent="."]
+z_index = -2
+offset_left = 96.0
+offset_top = 153.196
+offset_right = 136.0
+offset_bottom = 193.196
+scale = Vector2(1.838, 2.697)
+pivot_offset = Vector2(0, -3.42)
+theme_override_styles/panel = SubResource("StyleBoxTexture_354oi")
+
+[node name="Icone_blusa" type="TextureRect" parent="."]
+offset_left = 70.0
+offset_top = 284.0
+offset_right = 153.0
+offset_bottom = 363.0
+scale = Vector2(0.447953, 0.402141)
+texture = ExtResource("7_1i8i6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 284.0
+offset_right = 48.0
+offset_bottom = 308.0
+scale = Vector2(1.28, 1.363)
+theme_override_fonts/font = ExtResource("5_khodn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w18v5")
+text = "<"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 134.0
+offset_top = 290.0
+offset_right = 150.0
+offset_bottom = 306.0
+scale = Vector2(1.28, 1.363)
+theme_override_fonts/font = ExtResource("5_khodn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qa7gv")
+text = ">"
+
+[node name="moedas_gerais" type="Label" parent="."]
+offset_left = 153.0
+offset_top = 13.0
+offset_right = 193.0
+offset_bottom = 36.0
+scale = Vector2(0.741485, 0.776294)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_khodn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0a1cj")
+text = " 0"
+script = ExtResource("8_8ulmm")
+
+[node name="icone" type="TextureRect" parent="."]
+offset_left = 118.0
+offset_top = 4.0
+offset_right = 158.0
+offset_bottom = 44.0
+scale = Vector2(0.677184, 0.727423)
+texture = ExtResource("9_5oof2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="circulo" type="Sprite2D" parent="icone"]
+z_index = -1
+position = Vector2(19.741, 19.4046)
+scale = Vector2(0.0660838, 0.0670489)
+texture = ExtResource("10_2lv77")
+
+[node name="Label" type="Label" parent="icone"]
+layout_mode = 0
+offset_left = 37.5079
+offset_top = 15.8765
+offset_right = 77.5079
+offset_bottom = 38.8765
+scale = Vector2(0.806036, 0.636239)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "X"
+
+[node name="Possuido" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+offset_left = 16.0
+offset_top = 132.0
+offset_right = 160.0
+offset_bottom = 155.0
+scale = Vector2(0.431779, 0.473789)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "Possuído "
+
+[node name="Possuido2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+offset_left = 104.0
+offset_top = 132.0
+offset_right = 248.0
+offset_bottom = 186.0
+scale = Vector2(0.431779, 0.473789)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "X ??????
+
+"
+
+[node name="Possuido3" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+offset_left = 19.0
+offset_top = 270.0
+offset_right = 163.0
+offset_bottom = 324.0
+scale = Vector2(0.431779, 0.473789)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "X 5???
+
+"
+
+[node name="Possuido4" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+offset_left = 106.0
+offset_top = 269.0
+offset_right = 250.0
+offset_bottom = 323.0
+scale = Vector2(0.388228, 0.35717)
+theme_override_fonts/font = ExtResource("5_khodn")
+text = "Em breve?
+"
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_prpg0")
+volume_db = 0.275
+
+[connection signal="pressed" from="menu_icon" to="." method="_on_menu_icon_pressed"]

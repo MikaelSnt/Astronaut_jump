@@ -1,0 +1,273 @@
+[gd_scene load_steps=16 format=3 uid="uid://dl3beb5n4lpik"]
+
+[ext_resource type="Script" uid="uid://kkrtwhepmscl" path="res://Outro_projeto/Scripts/aviones.gd" id="1_0oel8"]
+[ext_resource type="Texture2D" uid="uid://c0nwp04wpdqau" path="res://Outro_projeto/imagens/Aviao_azul-removebg-preview.png" id="1_hlae8"]
+[ext_resource type="Texture2D" uid="uid://codsukxu0xonp" path="res://Outro_projeto/Assets/Mini FX, Items & UI/Effects/Explosion_Poof (16 x 16).png" id="1_x84d8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oel8"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rw8e"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bucu2"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0t6y"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smn6h"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfcn0"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1sp2"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aho8"]
+atlas = ExtResource("1_x84d8")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yp5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oel8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rw8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bucu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0t6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smn6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfcn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1sp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aho8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_0oel8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(60, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.562033]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anime:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_4yp5d")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anime:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anime:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("anime:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72, 120)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("anime:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_x84d8"]
+resource_name = "aviones_passando"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.51451, 7.86025, 9.99395, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-57, 112), Vector2(79, 106), Vector2(82, 106), Vector2(154.79, 145.799), Vector2(221, 182), Vector2(239.434, 188.434)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 5.51451, 9.99395),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0955112, 0.522952]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anime:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anime:sprite_frames")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anime:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4.17, 4.35451, 4.49451, 4.71451, 4.95451, 5.23333, 5.36451, 5.4, 5.70333, 5.93333, 6.12118, 6.26667, 6.53118, 6.56667, 6.76667, 6.9, 7.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 3, 5, 4, 3, 3, 4, 3, 5, 4, 3, 3, 3]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("anime:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.31451, 4.46451, 4.67451, 4.87451, 5.13451, 5.46451, 5.78025, 6.19025, 6.54025, 6.63025, 6.69025, 6.86025, 7.05025, 7.32025, 7.42025, 7.59025, 7.76025, 7.83025, 7.89025, 7.92025, 8.09025, 8.31025, 8.59025, 8.83025, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(72, 120), Vector2(75, 120), Vector2(81, 120), Vector2(83, 120), Vector2(87, 120), Vector2(87, 120), Vector2(101, 126), Vector2(108, 131), Vector2(118, 138), Vector2(112, 137), Vector2(122, 140), Vector2(129, 142), Vector2(137, 148), Vector2(144, 153), Vector2(148, 154), Vector2(152, 158), Vector2(158, 160), Vector2(159, 161), Vector2(148, 155), Vector2(160, 161), Vector2(169, 167), Vector2(173, 168), Vector2(177, 173), Vector2(184, 175), Vector2(211.434, 184.434)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("anime:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.33),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rw8e"]
+_data = {
+&"RESET": SubResource("Animation_0oel8"),
+&"aviones_passando": SubResource("Animation_x84d8")
+}
+
+[node name="Aviones" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_0oel8")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4rw8e")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(60, 39)
+rotation = 0.562033
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_hlae8")
+
+[node name="anime" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(72, 120)
+rotation = 0.279617
+sprite_frames = SubResource("SpriteFrames_4yp5d")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi4taqdv1v7je"]
+
+[ext_resource type="PackedScene" uid="uid://bhbaygvg313rl" path="res://Outro_projeto/Prefebs/player.tscn" id="1_uki1b"]
+[ext_resource type="PackedScene" uid="uid://cmacys0p78iy3" path="res://Outro_projeto/Prefebs/inimigo_boss.tscn" id="2_1shxc"]
+
+[node name="cena_test" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_uki1b")]
+position = Vector2(79, 256)
+space_ativo = true
+
+[node name="inimigo_boss" parent="." instance=ExtResource("2_1shxc")]
+position = Vector2(82, 80)
+
+[node name="player_container" type="Node2D" parent="."]
+
+[node name="Boss_container" type="Node2D" parent="."]

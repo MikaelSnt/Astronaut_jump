@@ -1,0 +1,138 @@
+[gd_scene load_steps=6 format=3 uid="uid://bygk72mxrhmcr"]
+
+[ext_resource type="Script" uid="uid://dbhbsnglgyvj6" path="res://Outro_projeto/Scripts/inimigo_satelite.gd" id="1_a7xa4"]
+[ext_resource type="Texture2D" uid="uid://dteqfjngmso2" path="res://Outro_projeto/Assets/Enemies/Gemini_Generated_Image_r1tuqyr1tuqyr1tu-removebg-preview.png" id="2_w01h5"]
+
+[sub_resource type="Animation" id="Animation_jhset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("inimigo_satelite/texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("inimigo_satelite/hit_box/CollisionPolygon2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("inimigo_satelite/texture:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("inimigo_satelite/hit_box/CollisionPolygon2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dxrcg"]
+resource_name = "idle"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("inimigo_satelite/texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, -1), Vector2(-1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("inimigo_satelite/hit_box/CollisionPolygon2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("inimigo_satelite/texture:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.46608]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("inimigo_satelite/hit_box/CollisionPolygon2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.46608]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ydrnv"]
+_data = {
+&"RESET": SubResource("Animation_jhset"),
+&"idle": SubResource("Animation_dxrcg")
+}
+
+[node name="inimigo_2" type="Node2D"]
+
+[node name="inimigo_satelite" type="StaticBody2D" parent="." groups=["inimigo"]]
+scale = Vector2(0.42, 0.42)
+script = ExtResource("1_a7xa4")
+
+[node name="texture" type="Sprite2D" parent="inimigo_satelite"]
+position = Vector2(-1, -1)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("2_w01h5")
+
+[node name="hit_box" type="Area2D" parent="inimigo_satelite"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="inimigo_satelite/hit_box"]
+polygon = PackedVector2Array(-28, 40, -8, 21, -11, 18, -5, 14, 0, 19, 4, 16, 5, 17, 4, 23, 6, 28, 9, 30, 17, 31, 23, 29, 28, 22, 29, 16, 29, 12, 24, 7, 17, 6, 15, 6, 17, -1, 14, -4, 18, -7, 21, -4, 41, -22, 27, -36, 7, -18, 11, -14, 7, -12, 2, -17, -4, -16, -4, -26, -11, -32, -22, -31, -27, -27, -31, -21, -31, -13, -27, -8, -20, -6, -17, -7, -16, -6, -21, -2, -13, 6, -17, 10, -21, 7, -42, 26)
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ydrnv")
+}
+autoplay = "idle"
+
+[connection signal="body_entered" from="inimigo_satelite/hit_box" to="inimigo_satelite" method="_on_hit_box_body_entered"]
